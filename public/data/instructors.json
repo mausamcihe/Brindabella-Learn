@@ -1,0 +1,50 @@
+[
+  {
+    "id": "i-1",
+    "name": "Radha Adhikari",
+    "role": "Principal Service Designer",
+    "org": "Brindabella Learn",
+    "bio": "Radha spent nine years running discovery for government service teams before moving into teaching. She still consults two days a week so the case studies stay current.",
+    "initials": "RA"
+  },
+  {
+    "id": "i-2",
+    "name": "Yugesh Basnet",
+    "role": "Accessibility Lead",
+    "org": "Brindabella Learn",
+    "bio": "Yugesh audits digital services against WCAG for agencies across the ACT and runs the institute's assistive technology lab in Braddon.",
+    "initials": "YB"
+  },
+  {
+    "id": "i-3",
+    "name": "Aashish Karki",
+    "role": "Data Engineering Lecturer",
+    "org": "Brindabella Learn",
+    "bio": "Aashish teaches the analytics and database stream. His background is in operational reporting for transport and utilities in Sydney and Canberra.",
+    "initials": "AK"
+  },
+  {
+    "id": "i-4",
+    "name": "Samip Thapa",
+    "role": "Security Practice Lead",
+    "org": "Brindabella Learn",
+    "bio": "Samip has worked incident response for a managed security provider since 2017 and writes the institute's tabletop exercises.",
+    "initials": "ST"
+  },
+  {
+    "id": "i-5",
+    "name": "Bardan Gurung",
+    "role": "Delivery Coach",
+    "org": "Brindabella Learn",
+    "bio": "Bardan coaches delivery teams through their first two quarters of agile working and is unusually honest about what does not transfer from the textbook.",
+    "initials": "BG"
+  },
+  {
+    "id": "i-6",
+    "name": "Ikesh Shrestha",
+    "role": "Senior Software Engineer",
+    "org": "Brindabella Learn",
+    "bio": "Ikesh builds frontend platforms for a Canberra consultancy and teaches the React and applied AI courses in the evenings.",
+    "initials": "IS"
+  }
+]

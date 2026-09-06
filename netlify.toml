@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page app: every route falls back to index.html so client-side
+# routing works on deep links and page refreshes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

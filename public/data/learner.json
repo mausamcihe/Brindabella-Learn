@@ -1,0 +1,56 @@
+{
+  "id": "u-1",
+  "firstName": "Mandip",
+  "lastName": "Thapa",
+  "email": "mandip.thapa@student.brindabellalearn.act.edu.au",
+  "phone": "0412 344 918",
+  "suburb": "Gungahlin",
+  "state": "ACT",
+  "goal": "Move into a frontend engineering role within twelve months",
+  "weeklyStudyTarget": 8,
+  "joinedOn": "2026-03-02",
+  "initials": "MT",
+  "enrolments": [
+    {
+      "courseId": "c-106",
+      "status": "In progress",
+      "enrolledOn": "2026-07-14",
+      "completedModuleIds": ["m-1", "m-2", "m-3", "m-4"],
+      "lastActivity": "2026-09-04",
+      "nextModuleId": "m-5"
+    },
+    {
+      "courseId": "c-102",
+      "status": "In progress",
+      "enrolledOn": "2026-08-02",
+      "completedModuleIds": ["m-1", "m-2"],
+      "lastActivity": "2026-09-01",
+      "nextModuleId": "m-3"
+    },
+    {
+      "courseId": "c-107",
+      "status": "Completed",
+      "enrolledOn": "2026-05-11",
+      "completedModuleIds": ["m-1", "m-2", "m-3", "m-4"],
+      "lastActivity": "2026-06-08",
+      "nextModuleId": null
+    },
+    {
+      "courseId": "c-112",
+      "status": "Not started",
+      "enrolledOn": "2026-09-03",
+      "completedModuleIds": [],
+      "lastActivity": null,
+      "nextModuleId": "m-1"
+    }
+  ],
+  "weeklyHours": [
+    { "week": "Jul 21", "hours": 6.5 },
+    { "week": "Jul 28", "hours": 8.0 },
+    { "week": "Aug 4", "hours": 4.5 },
+    { "week": "Aug 11", "hours": 9.5 },
+    { "week": "Aug 18", "hours": 7.0 },
+    { "week": "Aug 25", "hours": 10.0 },
+    { "week": "Sep 1", "hours": 5.5 }
+  ]
+}
