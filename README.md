@@ -2,7 +2,7 @@ Brindabella Learn
 
 A production-quality frontend for a fictional Canberra training provider. Learners discover short courses, enrol, and track their progress module by module.
 
-Built for ICT930 Advanced Web Application Development, Assessment 2, against the Education / Training Platform problem domain (option 3).
+Built for ICT930 Advanced Web Application Development, Assessment 2, against the Education / Training Platform problem domain.
 
 Live application: https://famous-bunny-981b21.netlify.app/ Repository: https://github.com/mausamcihe/Brindabella-Learn
 
@@ -19,7 +19,7 @@ Full role breakdown and individual contributions are in docs/Team-Contribution-S
 
 Brindabella Learn is the learner-facing frontend for a vocational training provider operating across Braddon, Belconnen, Civic and online. It addresses a problem every training provider has: a learner signs up with enthusiasm, disappears for three weeks, comes back, and cannot remember where they were.
 
-The application answers that question first. The dashboard opens with a resume panel showing the course last worked on, the exact module that comes next, and how far through the learner is. Everything else — the catalogue, the enrolment list, the profile — sits underneath that.
+The application answers that question first. The dashboard opens with a resume panel showing the course last worked on, the exact module that comes next, and how far through the learner is. Everything else, the catalogue, the enrolment list, the profile — sits underneath that.
 
 The scenario assumes the backend already exists. This project is the frontend team's deliverable: component architecture, state management, routing, data handling, accessibility and responsive design.
 
@@ -122,7 +122,7 @@ A single store would mean every course card re-renders whenever a toast appears.
 
 Filter state in the URL
 
-The catalogue's filters are held in the query string rather than component state. This makes a filtered result shareable as a link, restorable on refresh, and navigable with the browser's back button — behaviour people already expect of search results. The search text is mirrored in local state so typing stays instant, then debounced before it reaches the URL.
+The catalogue's filters are held in the query string rather than component state. This makes a filtered result shareable as a link, restorable on refresh, and navigable with the browser's back button, behaviour people already expect of search results. The search text is mirrored in local state so typing stays instant, then debounced before it reaches the URL.
 
 Route-level code splitting
 
@@ -130,11 +130,11 @@ Only the shell and dashboard are in the initial bundle. Every other route is loa
 
 One design system, no framework
 
-Colour, type, spacing and shape all come from custom properties in src/styles/tokens.css. The palette is eucalypt green with a wattle-gold accent on a cool paper grey — drawn from the Canberra bush the institute is named after, and chosen partly because gold reads clearly as a focus ring against both the green surfaces and the light background, which a green ring would not.
+Colour, type, spacing and shape all come from custom properties in src/styles/tokens.css. The palette is eucalypt green with a wattle-gold accent on a cool paper grey, drawn from the Canberra bush the institute is named after, and chosen partly because gold reads clearly as a focus ring against both the green surfaces and the light background, which a green ring would not.
 
 Deliberate restraint
 
-One element in the interface is loud: the resume panel on the dashboard, a deep eucalypt slab with a progress ring. Everything else is flat surfaces with hairline borders. Elevation is reserved for things that genuinely float (dialogs, toasts), and numbered markers appear in exactly one place — the module timeline — because modules genuinely are a sequence.
+One element in the interface is loud: the resume panel on the dashboard, a deep eucalypt slab with a progress ring. Everything else is flat surfaces with hairline borders. Elevation is reserved for things that genuinely float (dialogs, toasts), and numbered markers appear in exactly one place, the module timeline, because modules genuinely are a sequence.
 
 Bottom tab bar on mobile
 
