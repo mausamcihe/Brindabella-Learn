@@ -1,0 +1,88 @@
+/*
+  Design tokens for Brindabella Learn.
+  Palette is drawn from the Canberra bush setting the institute sits in:
+  eucalypt green as the primary, wattle gold as the accent, and a cool
+  paper grey rather than a warm cream so the greens stay clean.
+  Every token here is referenced by name — no raw hex values in components.
+*/
+:root {
+  /* ---- Colour ---- */
+  --ink-900: #131c24;
+  --ink-700: #2b3a45;
+  --ink-500: #5a6b76;
+  --ink-300: #93a2ab;
+  --ink-100: #e3e9e7;
+
+  --paper: #f3f6f4;
+  --surface: #ffffff;
+  --surface-sunk: #eef2f0;
+  --line: #dbe3e0;
+  --line-strong: #c3cfca;
+
+  --eucalypt-800: #1c3f31;
+  --eucalypt-700: #24513f;
+  --eucalypt-600: #2e6650;
+  --eucalypt-300: #86b3a1;
+  --eucalypt-100: #dceae3;
+
+  --wattle-700: #8a6209;
+  --wattle-500: #e0a521;
+  --wattle-100: #fbeecb;
+
+  --clay-700: #8d3626;
+  --clay-600: #a8412f;
+  --clay-100: #f7ded8;
+
+  --sky-700: #234d70;
+  --sky-600: #2c5f8a;
+  --sky-100: #dce8f2;
+
+  /* Semantic aliases */
+  --text: var(--ink-900);
+  --text-muted: var(--ink-500);
+  --brand: var(--eucalypt-600);
+  --brand-strong: var(--eucalypt-700);
+  --accent: var(--wattle-500);
+  --danger: var(--clay-600);
+  --focus: var(--wattle-500);
+
+  /* ---- Type ---- */
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.4375rem;
+  --step-3: 1.75rem;
+  --step-4: 2.125rem;
+  --step-5: 2.625rem;
+
+  /* ---- Space ---- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+
+  /* ---- Shape ---- */
+  --r-sm: 5px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Elevation is reserved for things that genuinely float above the page. */
+  --shadow-pop: 0 18px 40px -18px rgba(19, 28, 36, 0.45);
+  --shadow-rail: 0 -1px 0 var(--line);
+
+  /* ---- Layout ---- */
+  --rail-width: 15rem;
+  --content-max: 74rem;
+  --measure: 68ch;
+
+  --speed: 160ms;
+  --ease: cubic-bezier(0.2, 0, 0.15, 1);
+}

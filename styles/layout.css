@@ -1,0 +1,255 @@
+/* ---------------------------------------------------------------
+   Application shell.
+   Desktop: a persistent left navigation rail, because a learning
+   portal is an application rather than a marketing site and the
+   destinations should always be visible.
+   Mobile: the rail becomes a bottom tab bar, which is where thumbs
+   already are, instead of hiding navigation behind a hamburger.
+   --------------------------------------------------------------- */
+
+.shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+@media (min-width: 60rem) {
+  .shell {
+    grid-template-columns: var(--rail-width) 1fr;
+  }
+}
+
+/* ---- Top bar (mobile only) ---- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-4);
+  background: var(--eucalypt-800);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+@media (min-width: 60rem) {
+  .topbar {
+    display: none;
+  }
+}
+
+/* ---- Left rail ---- */
+.rail {
+  display: none;
+  background: var(--eucalypt-800);
+  color: #dfeae4;
+  padding: var(--s-5) var(--s-4);
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  flex-direction: column;
+  gap: var(--s-6);
+}
+
+@media (min-width: 60rem) {
+  .rail {
+    display: flex;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-1);
+  letter-spacing: -0.02em;
+}
+
+.brand:hover {
+  color: #fff;
+}
+
+.brand__mark {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+}
+
+.brand__sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  font-weight: 400;
+  color: var(--eucalypt-300);
+  letter-spacing: 0;
+}
+
+.rail__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+
+.rail__link {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3);
+  border-radius: var(--r-md);
+  color: #cfded6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background var(--speed) var(--ease), color var(--speed) var(--ease);
+}
+
+.rail__link:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+}
+
+.rail__link[aria-current='page'] {
+  background: var(--eucalypt-600);
+  color: #fff;
+}
+
+.rail__link[aria-current='page'] .rail__icon {
+  color: var(--wattle-500);
+}
+
+.rail__icon {
+  flex: none;
+  color: var(--eucalypt-300);
+}
+
+.rail__count {
+  margin-left: auto;
+  font-size: var(--step--1);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-pill);
+  padding: 0 var(--s-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.rail__footer {
+  margin-top: auto;
+  font-size: var(--step--1);
+  color: var(--eucalypt-300);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: var(--s-4);
+}
+
+.rail__footer p {
+  max-width: none;
+}
+
+/* ---- Bottom tab bar (mobile only) ---- */
+.tabbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: var(--s-2) var(--s-1) calc(var(--s-2) + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 60rem) {
+  .tabbar {
+    display: none;
+  }
+}
+
+.tabbar__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--s-2) var(--s-1);
+  font-size: 0.6875rem;
+  color: var(--ink-500);
+  text-decoration: none;
+  border-radius: var(--r-sm);
+}
+
+.tabbar__link[aria-current='page'] {
+  color: var(--brand-strong);
+  font-weight: 600;
+}
+
+/* ---- Main column ---- */
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.main__inner {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: var(--s-5) var(--s-4) var(--s-7);
+}
+
+@media (min-width: 48rem) {
+  .main__inner {
+    padding: var(--s-6) var(--s-6) var(--s-8);
+  }
+}
+
+/* ---- Page header ---- */
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-4);
+  margin-bottom: var(--s-5);
+}
+
+.page-head__lede {
+  color: var(--text-muted);
+  margin-top: var(--s-2);
+}
+
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  margin-bottom: var(--s-3);
+}
+
+.crumbs a {
+  color: var(--text-muted);
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  padding: var(--s-5) var(--s-4);
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.footer__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  justify-content: space-between;
+}
+
+.footer p {
+  max-width: none;
+}

@@ -1,0 +1,633 @@
+/* ---------------------------------------------------------------
+   Feature-level styling. The one deliberately bold element in this
+   interface is the resume panel on the dashboard: a deep eucalypt
+   slab with a progress ring. Everything around it stays quiet.
+   --------------------------------------------------------------- */
+
+/* ---- Resume panel (dashboard hero) ---- */
+.resume {
+  background: var(--eucalypt-800);
+  color: #e6efe9;
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-5);
+}
+
+@media (min-width: 48rem) {
+  .resume {
+    padding: var(--s-6);
+  }
+}
+
+.resume__body {
+  flex: 1 1 18rem;
+  min-width: 0;
+}
+
+.resume__kicker {
+  font-size: var(--step--1);
+  color: var(--eucalypt-300);
+  margin-bottom: var(--s-2);
+}
+
+.resume__title {
+  font-size: var(--step-3);
+  color: #fff;
+  margin-bottom: var(--s-2);
+}
+
+.resume__next {
+  color: #cfded6;
+  margin-bottom: var(--s-4);
+}
+
+.resume__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+}
+
+.resume .btn--secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.resume .btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+.resume .ring__track {
+  stroke: rgba(255, 255, 255, 0.16);
+}
+
+.resume .ring__value {
+  stroke: var(--wattle-500);
+}
+
+.resume .ring-wrap__label {
+  color: #fff;
+  font-size: var(--step-2);
+}
+
+/* ---- Inline statistics row ---- */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-5) var(--s-6);
+  padding: var(--s-4) var(--s-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.stat__label {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+/* ---- Course grid and card ---- */
+.course-grid {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 68rem) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.course-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  height: 100%;
+}
+
+.course-card:focus-within {
+  border-color: var(--ink-300);
+}
+
+/* The band colour encodes the course stream, so a returning learner
+   can pick out the stream they are studying without reading labels. */
+.course-card__band {
+  height: 0.375rem;
+}
+
+.course-card__band--eucalypt {
+  background: var(--eucalypt-600);
+}
+.course-card__band--wattle {
+  background: var(--wattle-500);
+}
+.course-card__band--ink {
+  background: var(--sky-600);
+}
+.course-card__band--clay {
+  background: var(--clay-600);
+}
+
+.course-card__body {
+  padding: var(--s-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  flex: 1;
+}
+
+.course-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  align-items: center;
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.course-card__title {
+  font-size: var(--step-1);
+}
+
+.course-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.course-card__title a:hover {
+  color: var(--brand-strong);
+  text-decoration: underline;
+}
+
+/* Makes the whole card clickable while keeping a single real link
+   in the accessibility tree. */
+.course-card__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.course-card {
+  position: relative;
+}
+
+.course-card__summary {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  max-width: none;
+}
+
+.course-card__foot {
+  margin-top: auto;
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  font-size: var(--step--1);
+}
+
+.course-card__price {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--step-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.course-card__progress {
+  width: 100%;
+}
+
+/* ---- Catalogue toolbar ---- */
+.toolbar {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  margin-bottom: var(--s-5);
+  display: grid;
+  gap: var(--s-4);
+}
+
+.toolbar__row {
+  display: grid;
+  gap: var(--s-3);
+}
+
+@media (min-width: 48rem) {
+  .toolbar__row--split {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: end;
+  }
+}
+
+.toolbar .field {
+  margin-bottom: 0;
+}
+
+.toolbar__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+
+.toolbar__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+.search-field {
+  position: relative;
+}
+
+.search-field .field__control {
+  padding-left: 2.25rem;
+}
+
+.search-field__icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-300);
+  pointer-events: none;
+}
+
+/* ---- Course detail ---- */
+.detail {
+  display: grid;
+  gap: var(--s-5);
+}
+
+@media (min-width: 62rem) {
+  .detail {
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    align-items: start;
+  }
+}
+
+.detail__aside {
+  position: sticky;
+  top: var(--s-5);
+  display: grid;
+  gap: var(--s-4);
+}
+
+.detail__facts {
+  display: grid;
+  gap: var(--s-3);
+  font-size: var(--step--1);
+}
+
+.detail__fact {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s-3);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--s-3);
+}
+
+.detail__fact:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.detail__fact dt {
+  color: var(--text-muted);
+}
+
+.detail__fact dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+.outcomes {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.outcomes li {
+  display: flex;
+  gap: var(--s-3);
+  align-items: flex-start;
+}
+
+.outcomes svg {
+  flex: none;
+  margin-top: 0.25rem;
+  color: var(--eucalypt-600);
+}
+
+/* ---- Module spine ----
+   Numbering is used here because the modules genuinely are a
+   sequence; it is not used anywhere else in the interface. */
+.spine {
+  display: grid;
+  gap: 0;
+}
+
+.spine__item {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: var(--s-4);
+  position: relative;
+  padding-bottom: var(--s-5);
+}
+
+.spine__item:last-child {
+  padding-bottom: 0;
+}
+
+.spine__item::before {
+  content: '';
+  position: absolute;
+  left: 1.09rem;
+  top: 2.25rem;
+  bottom: 0;
+  width: 2px;
+  background: var(--line-strong);
+}
+
+.spine__item:last-child::before {
+  display: none;
+}
+
+.spine__node {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--r-pill);
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--line-strong);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  z-index: 1;
+}
+
+.spine__node--done {
+  background: var(--eucalypt-600);
+  border-color: var(--eucalypt-600);
+  color: #fff;
+}
+
+.spine__node--current {
+  border-color: var(--wattle-500);
+  background: var(--wattle-100);
+  color: var(--wattle-700);
+}
+
+.spine__title {
+  font-size: var(--step-0);
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+.spine__meta {
+  font-size: var(--step--1);
+  color: var(--text-muted);
+}
+
+/* ---- Weekly activity chart ---- */
+.activity {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--s-3);
+  height: 9rem;
+  padding-top: var(--s-4);
+}
+
+.activity__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s-2);
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.activity__bar {
+  width: 100%;
+  max-width: 2.5rem;
+  background: var(--eucalypt-100);
+  border-top: 3px solid var(--eucalypt-600);
+  border-radius: 3px 3px 0 0;
+  min-height: 3px;
+}
+
+.activity__bar--target {
+  background: var(--wattle-100);
+  border-top-color: var(--wattle-500);
+}
+
+.activity__label {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  font-size: var(--step--1);
+  color: var(--text-muted);
+  margin-top: var(--s-3);
+}
+
+.legend__swatch {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 2px;
+  margin-right: var(--s-2);
+  vertical-align: -1px;
+}
+
+/* ---- Enrolment list ---- */
+.enrolment-list {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.enrolment {
+  display: grid;
+  gap: var(--s-4);
+  grid-template-columns: 1fr;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+}
+
+@media (min-width: 40rem) {
+  .enrolment {
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+}
+
+.enrolment__body {
+  min-width: 0;
+}
+
+.enrolment__title {
+  font-size: var(--step-1);
+  margin-bottom: var(--s-1);
+}
+
+.enrolment__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.enrolment__title a:hover {
+  text-decoration: underline;
+  color: var(--brand-strong);
+}
+
+.enrolment__actions {
+  display: flex;
+  gap: var(--s-2);
+  flex-wrap: wrap;
+}
+
+/* ---- Tabs ---- */
+.tabs {
+  display: flex;
+  gap: var(--s-1);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--s-5);
+  overflow-x: auto;
+}
+
+.tabs__tab {
+  border: 0;
+  background: none;
+  padding: var(--s-3) var(--s-4);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.tabs__tab:hover {
+  color: var(--ink-900);
+}
+
+.tabs__tab[aria-selected='true'] {
+  color: var(--eucalypt-800);
+  border-bottom-color: var(--eucalypt-600);
+}
+
+/* ---- Person ---- */
+.person {
+  display: flex;
+  gap: var(--s-4);
+  align-items: center;
+}
+
+.avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: none;
+  border-radius: var(--r-pill);
+  background: var(--eucalypt-100);
+  color: var(--eucalypt-800);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.avatar--lg {
+  width: 4rem;
+  height: 4rem;
+  font-size: var(--step-2);
+}
+
+/* ---- Two column forms ---- */
+.form-grid {
+  display: grid;
+  gap: 0 var(--s-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .form-grid--two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-note {
+  background: var(--sky-100);
+  border-left: 4px solid var(--sky-600);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: var(--s-3) var(--s-4);
+  font-size: var(--step--1);
+  color: var(--sky-700);
+  margin-bottom: var(--s-5);
+}
+
+.form-note p {
+  max-width: none;
+}
+
+.error-summary {
+  border: 2px solid var(--clay-600);
+  background: var(--clay-100);
+  border-radius: var(--r-md);
+  padding: var(--s-4);
+  margin-bottom: var(--s-5);
+}
+
+.error-summary h2 {
+  font-size: var(--step-1);
+  color: var(--clay-700);
+  margin-bottom: var(--s-2);
+}
+
+.error-summary ul {
+  padding-left: var(--s-5);
+  margin: 0;
+  list-style: disc;
+}
+
+.error-summary a {
+  color: var(--clay-700);
+}
